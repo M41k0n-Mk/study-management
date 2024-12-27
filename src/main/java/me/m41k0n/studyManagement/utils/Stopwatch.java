@@ -1,4 +1,4 @@
-package me.m41k0n.study_management.utils;
+package me.m41k0n.studyManagement.utils;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;

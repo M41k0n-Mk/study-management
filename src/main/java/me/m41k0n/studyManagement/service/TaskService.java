@@ -1,6 +1,6 @@
-package me.m41k0n.study_management.service;
+package me.m41k0n.studyManagement.service;
 
-import me.m41k0n.study_management.utils.Stopwatch;
+import me.m41k0n.studyManagement.utils.Stopwatch;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;

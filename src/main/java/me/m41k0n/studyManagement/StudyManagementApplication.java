@@ -1,4 +1,4 @@
-package me.m41k0n.study_management;
+package me.m41k0n.studyManagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
