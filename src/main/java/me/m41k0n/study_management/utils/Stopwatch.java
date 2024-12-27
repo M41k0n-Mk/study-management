@@ -42,4 +42,12 @@ public class Stopwatch {
         stop();
         time = LocalTime.of(0, 0, 0);
     }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public long getTimeInSeconds() {
+        return time.toSecondOfDay();
+    }
 }
