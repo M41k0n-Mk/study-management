@@ -7,8 +7,9 @@ import java.util.TimerTask;
 
 public class Stopwatch {
     private LocalTime time;
-    private final Timer timer;
+    private Timer timer;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    private boolean isRunning;
 
     public Stopwatch() {
         time = LocalTime.of(0, 0, 0);
@@ -16,21 +17,36 @@ public class Stopwatch {
     }
 
     public void start() {
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                time = time.plusSeconds(1);
-                System.out.println(time.format(formatter));
-            }
-        }, 0, 1000);
+        if (!isRunning) {
+            timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    time = time.plusSeconds(1);
+                    System.out.println(time.format(formatter));
+                }
+            }, 0, 1000);
+            isRunning = true;
+        }
     }
 
     public void stop() {
-        timer.cancel();
+        if (isRunning) {
+            timer.cancel();
+            isRunning = false;
+        }
     }
 
     public void reset() {
         stop();
         time = LocalTime.of(0, 0, 0);
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public long getTimeInSeconds() {
+        return time.toSecondOfDay();
     }
 }
