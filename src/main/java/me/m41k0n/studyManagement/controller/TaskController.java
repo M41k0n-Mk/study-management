@@ -1,6 +1,6 @@
-package me.m41k0n.study_management.controller;
+package me.m41k0n.studyManagement.controller;
 
-import me.m41k0n.study_management.service.TaskService;
+import me.m41k0n.studyManagement.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
